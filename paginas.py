@@ -39,7 +39,7 @@ evento_jsonld = json.dumps({
 }, ensure_ascii=False)
 
 home = """<main>
-<div class="hero">
+<div class="hero hero-foto">
   <div class="wrap">
     <p class="eyebrow">TR3 — Terras Raras Business</p>
     <h1>Assessoria comercial B2B que estrutura o time de vendas da sua empresa</h1>
@@ -61,6 +61,19 @@ home = """<main>
 </div>
 
 <section>
+  <div class="wrap">
+    <p class="eyebrow">Por dentro</p>
+    <h2>É assim que a sala fica</h2>
+    <p class="lead-muted">Empresário de todo o Brasil, dois dias, processo desenhado na prática.</p>
+    <div class="galeria">
+      <figure><img src="/assets/fotos/evento-3.jpg" alt="Diego Vicente no palco do MMV, com a plateia de empresários sentada às mesas" loading="lazy" width="1400" height="933"><figcaption>Sala cheia nos dois dias de imersão</figcaption></figure>
+      <figure><img src="/assets/fotos/evento-1.jpg" alt="Diego Vicente desenhando o processo comercial em uma tela durante o MMV" loading="lazy" width="1400" height="933"><figcaption>O processo desenhado na frente de todo mundo</figcaption></figure>
+      <figure><img src="/assets/fotos/evento-2.jpg" alt="Momento da imersão MMV em Alphaville" loading="lazy" width="1400" height="933"><figcaption>Implementação, não palestra motivacional</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="band">
   <div class="wrap">
     <p class="eyebrow">O diagnóstico começa aqui</p>
     <h2>Como estruturar um time de vendas que não depende do dono</h2>
@@ -181,17 +194,25 @@ home = """<main>
       <p>Hoje o time da TR3 faz isso dentro da empresa dos clientes: processo, treino e acompanhamento,
         até o número subir.</p>
     </div>
-    <div class="people">
-      <div class="person">
-        <p class="role">Sócio</p>
-        <h3>Diego Vicente</h3>
-        <p>Criador do MMV. Conduz as imersões e participa dos projetos de assessoria.</p>
+    <div class="split">
+      <div>
+        <div class="people">
+              <div class="person">
+            <p class="role">Sócio</p>
+            <h3>Diego Vicente</h3>
+            <p>Criador do MMV. Conduz as imersões e participa dos projetos de assessoria.</p>
+          </div>
+          <div class="person">
+            <p class="role">Sócio</p>
+            <h3>Pablo Marçal</h3>
+            <p>Sócio do projeto.</p>
+            <!-- FOTO DOS SOCIOS: entra aqui quando o Diego enviar o arquivo -->
+          </div>
+        </div>
       </div>
-      <div class="person">
-        <p class="role">Sócio</p>
-        <h3>Pablo Marçal</h3>
-        <p>Sócio do projeto.</p>
-      </div>
+      <figure class="split-foto">
+        <img src="/assets/fotos/evento-4.jpg" alt="Diego Vicente conduzindo a imersão MMV" loading="lazy" width="1400" height="1750">
+      </figure>
     </div>
   </div>
 </section>
@@ -201,7 +222,8 @@ home = """<main>
   <div class="wrap">
     <p class="eyebrow">Próxima turma</p>
     <h2>Próxima imersão de vendas presencial: 30 e 31 de outubro de 2026, em Alphaville</h2>
-    <div class="event">
+    <div class="split">
+      <div class="event">
       <p class="when">30 e 31 de outubro de 2026 &middot; Alphaville, Barueri/SP</p>
       <h3>Dois dias para desenhar o processo do seu comercial</h3>
       <p>Você entra com o seu comercial do jeito que ele está e sai com o processo desenhado: quem faz o
@@ -209,6 +231,10 @@ home = """<main>
       <p>Ingresso individual R$ 997. Em dupla, R$ 1.497 — vale levar quem lidera o seu time.</p>
       <p style="margin-top:26px">%s</p>
       <p class="cta-note">Vagas limitadas pelo tamanho da sala.</p>
+      </div>
+      <figure class="split-foto split-foto-larga">
+        <img src="/assets/fotos/evento-3.jpg" alt="Plateia do MMV em Alphaville" loading="lazy" width="1400" height="933">
+      </figure>
     </div>
   </div>
 </section>

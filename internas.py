@@ -91,7 +91,12 @@ faq_i = [
     ("Dá direito a algum acompanhamento depois?",
      "A imersão é o evento. O acompanhamento contínuo é a assessoria, e quem quiser conhece o formato durante os dois dias."),
 ]
-corpo_i = sec("O que você leva", "O que você leva da imersão de vendas", """
+corpo_i = sec("Por dentro", "Como é a imersão por dentro", """
+    <div class="galeria">
+      <figure><img src="/assets/fotos/evento-3.jpg" alt="Plateia do MMV em Alphaville" loading="lazy" width="1400" height="933"><figcaption>Dois dias, sala cheia, em Alphaville</figcaption></figure>
+      <figure><img src="/assets/fotos/evento-1.jpg" alt="Diego Vicente desenhando o processo comercial" loading="lazy" width="1400" height="933"><figcaption>O processo desenhado na prática</figcaption></figure>
+      <figure><img src="/assets/fotos/evento-2.jpg" alt="Imersão MMV" loading="lazy" width="1400" height="933"><figcaption>Implementação, não motivação</figcaption></figure>
+    </div>""") + sec("O que você leva", "O que você leva da imersão de vendas", """
     <ol class="steps">
       <li><h3>Atração</h3><p>Os canais de geração de demanda para encher o funil de oportunidade
         qualificada.</p></li>
@@ -133,7 +138,7 @@ pagina("/imersao-de-vendas-sao-paulo/", "Imersão de Vendas em São Paulo | MMV 
          "Imersão de vendas presencial em São Paulo: 2 dias para montar o processo do seu comercial",
          "MMV — Método Multiplicador de Vendas. Mais de 2.000 empresas já passaram.",
          "Dois dias em Alphaville, Barueri, na Grande São Paulo. Você entra com o seu comercial do jeito que ele está e sai com o processo desenhado: quem faz o quê, em quanto tempo, com qual meta.",
-         cta("imersao-topo", "Quero minha vaga no MMV"), "Ingresso individual R$ 997. Em dupla, R$ 1.497.") + corpo_i + "</main>",
+         cta("imersao-topo", "Quero minha vaga no MMV"), "Ingresso individual R$ 997. Em dupla, R$ 1.497.").replace('class="hero"', 'class="hero hero-foto"') + corpo_i + "</main>",
        jsonld_extra=[faq_jsonld(faq_i)])
 
 # ------------------------------------------------ TREINAMENTO
