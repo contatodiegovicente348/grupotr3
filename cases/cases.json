@@ -63,12 +63,12 @@
   "n": 6,
   "empresa": "Fernando Sapata",
   "arroba": "@fernandosapata",
-  "pessoa": "Fernando Sapata",
+  "pessoa": "Fernando Sapata e Lisie",
   "desc": "Fundador da Log B2B e CEO da Transportadora Evelyn",
-  "titulo": "R$ 400 mil em 60 dias",
-  "sub": "Encontrou um novo modelo de negócio dentro da própria empresa.",
+  "titulo": "R$ 3 milhões em um negócio novo",
+  "sub": "13 contêineres importados.",
   "antes": "Entrou no programa buscando estruturar o time comercial.",
-  "depois": "Novo braço de importação de contêineres faturando mais de R$ 400 mil nos primeiros 60 dias.",
+  "depois": "Vendas cresceram R$ 400 mil e o novo braço de importação de contêineres já faturou R$ 3 milhões.",
   "img": "img/case-fernando-sapata.png"
  },
  {
@@ -85,18 +85,6 @@
  },
  {
   "n": 8,
-  "empresa": "Fernando e Lisie",
-  "arroba": "",
-  "pessoa": "Fernando e Lisie",
-  "desc": "",
-  "titulo": "R$ 3 milhões de faturamento",
-  "sub": "13 contêineres importados.",
-  "antes": "",
-  "depois": "",
-  "img": ""
- },
- {
-  "n": 9,
   "empresa": "João Pedro",
   "arroba": "@joaopedrodeolindo",
   "pessoa": "João Pedro",
@@ -108,7 +96,7 @@
   "img": "img/case-joao-pedro.png"
  },
  {
-  "n": 10,
+  "n": 9,
   "empresa": "Eneias",
   "arroba": "",
   "pessoa": "Eneias",
@@ -120,7 +108,7 @@
   "img": ""
  },
  {
-  "n": 11,
+  "n": 10,
   "empresa": "Carina",
   "arroba": "",
   "pessoa": "Carina",
