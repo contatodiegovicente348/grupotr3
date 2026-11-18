@@ -97,15 +97,15 @@
  },
  {
   "n": 9,
-  "empresa": "Eneias",
-  "arroba": "",
-  "pessoa": "Eneias",
-  "desc": "",
+  "empresa": "Eneas",
+  "arroba": "@eneascarloscruz",
+  "pessoa": "Eneas Carlos da Cruz",
+  "desc": "Mentor de empresários",
   "titulo": "Da dívida milionária à empresa lucrativa",
   "sub": "Importador e palestrante.",
   "antes": "Dívida milionária.",
   "depois": "Hoje, empresa lucrativa.",
-  "img": ""
+  "img": "img/case-eneas.png"
  },
  {
   "n": 10,
