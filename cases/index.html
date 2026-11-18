@@ -14,6 +14,7 @@ h1{font-size:34px;text-align:center;letter-spacing:1px} h1 span{color:var(--ouro
 .nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:34px}
 .nav a{color:var(--txt);border:1px solid #333;border-radius:20px;padding:7px 14px;text-decoration:none;font-size:14px}
 .nav a:hover{border-color:var(--ouro);color:var(--ouro)}
+.case.semimg{grid-template-columns:1fr;text-align:center}.case.semimg .ad{text-align:left}
 .case{max-width:1280px;margin:0 auto 40px;background:var(--card);border:1px solid #262626;border-radius:22px;padding:34px;display:grid;grid-template-columns:1.05fr 1fr;gap:34px;align-items:center}
 .case .img{background:#000;border-radius:14px;padding:10px;display:flex;align-items:center;justify-content:center}
 .case .img img{max-width:100%;max-height:520px;border-radius:8px;display:block}
@@ -48,13 +49,13 @@ fetch('cases.json').then(r=>r.json()).then(cs=>{
   const lista=document.getElementById('lista'),nav=document.getElementById('nav');
   cs.forEach(c=>{
     nav.insertAdjacentHTML('beforeend',`<a href="?caso=${c.n}">${String(c.n).padStart(2,'0')} · ${esc(c.empresa)}</a>`);
-    lista.insertAdjacentHTML('beforeend',`<section class="case" id="c${c.n}" data-n="${c.n}">
-      <div class="img"><img src="${esc(c.img)}" alt="Print do perfil ${esc(c.arroba)} no Instagram"></div>
+    lista.insertAdjacentHTML('beforeend',`<section class="case${c.img?"":" semimg"}" id="c${c.n}" data-n="${c.n}">
+      ${c.img?`<div class="img"><img src="${esc(c.img)}" alt="Print do perfil ${esc(c.arroba)} no Instagram"></div>`:""}
       <div><div class="sel">CASE ${String(c.n).padStart(2,'0')}</div>
-      <div class="who">${esc(c.pessoa)}</div><div class="desc">${esc(c.desc)}</div>
-      <div class="tit">${esc(c.titulo)}</div><div class="sub">${esc(c.sub)}</div>
-      <div class="ad"><div><b>ANTES</b>${esc(c.antes)}</div><div class="d"><b>DEPOIS</b>${esc(c.depois)}</div></div>
-      <div class="arroba">Perfil real: ${esc(c.arroba)}</div></div></section>`);
+      <div class="who">${esc(c.pessoa)}</div>${c.desc?`<div class="desc">${esc(c.desc)}</div>`:""}
+      <div class="tit">${esc(c.titulo)}</div>${c.sub?`<div class="sub">${esc(c.sub)}</div>`:""}
+      ${c.antes&&c.depois?`<div class="ad"><div><b>ANTES</b>${esc(c.antes)}</div><div class="d"><b>DEPOIS</b>${esc(c.depois)}</div></div>`:""}
+      ${c.arroba?`<div class="arroba">Perfil real: ${esc(c.arroba)}</div>`:""}</div></section>`);
   });
   if(q){document.body.classList.add('solo');[...lista.children].forEach(s=>{if(s.dataset.n!==q)s.remove()});}
 });
