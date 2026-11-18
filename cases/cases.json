@@ -109,14 +109,14 @@
  },
  {
   "n": 10,
-  "empresa": "Carina",
-  "arroba": "",
-  "pessoa": "Carina",
-  "desc": "",
+  "empresa": "Carina Azevedo",
+  "arroba": "@carinadeaz",
+  "pessoa": "Carina Azevedo",
+  "desc": "Advogada tributária",
   "titulo": "R$ 15 milhões em contratos recuperados",
   "sub": "Aplicando o método, fechou contratos que estavam perdidos no CRM.",
   "antes": "Contratos perdidos no CRM.",
   "depois": "R$ 15 milhões fechados.",
-  "img": ""
+  "img": "img/case-carina.png"
  }
 ]
