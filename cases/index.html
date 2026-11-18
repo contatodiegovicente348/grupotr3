@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Cases TR3 | Provas sociais</title>
+<style>
+:root{--ouro:#E4C15A;--bg:#0a0a0a;--card:#141414;--txt:#f4f4f4;--mut:#a8a8a8}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--txt);font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif;padding:32px 20px 60px}
+h1{font-size:34px;text-align:center;letter-spacing:1px} h1 span{color:var(--ouro)}
+.top{text-align:center;color:var(--mut);margin:8px 0 28px;font-size:15px}
+.nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:34px}
+.nav a{color:var(--txt);border:1px solid #333;border-radius:20px;padding:7px 14px;text-decoration:none;font-size:14px}
+.nav a:hover{border-color:var(--ouro);color:var(--ouro)}
+.case{max-width:1280px;margin:0 auto 40px;background:var(--card);border:1px solid #262626;border-radius:22px;padding:34px;display:grid;grid-template-columns:1.05fr 1fr;gap:34px;align-items:center}
+.case .img{background:#000;border-radius:14px;padding:10px;display:flex;align-items:center;justify-content:center}
+.case .img img{max-width:100%;max-height:520px;border-radius:8px;display:block}
+.sel{color:var(--ouro);font-weight:800;letter-spacing:3px;font-size:14px}
+.who{font-size:22px;font-weight:700;margin:6px 0 2px} .desc{color:var(--mut);font-size:16px;margin-bottom:18px}
+.tit{font-size:44px;line-height:1.08;font-weight:800;color:var(--ouro);margin-bottom:10px}
+.sub{font-size:20px;margin-bottom:22px}
+.ad{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ad div{background:#0c0c0c;border:1px solid #262626;border-radius:12px;padding:14px;font-size:16px;line-height:1.35}
+.ad b{display:block;font-size:12px;letter-spacing:2px;margin-bottom:6px;color:var(--mut)} .ad .d b{color:var(--ouro)}
+.arroba{margin-top:16px;color:var(--mut);font-size:15px}
+.rodape{text-align:center;color:var(--mut);margin-top:30px;font-size:14px}
+/* modo captura: ?caso=N mostra só 1 case em tela cheia (1920x1080) */
+body.solo{padding:0;display:flex;align-items:center;justify-content:center;min-height:100vh}
+body.solo .case{margin:0;width:100vw;max-width:none;min-height:100vh;border:0;border-radius:0;padding:5vh 5vw}
+body.solo h1,body.solo .top,body.solo .nav,body.solo .rodape{display:none}
+body.solo .tit{font-size:clamp(40px,4.6vw,86px)} body.solo .sub{font-size:clamp(20px,1.9vw,34px)} body.solo .who{font-size:clamp(22px,2vw,36px)}
+body.solo .ad div{font-size:clamp(16px,1.35vw,26px)} body.solo .case .img img{max-height:72vh}
+@media(max-width:860px){.case{grid-template-columns:1fr;padding:20px}.tit{font-size:32px}}
+</style>
+</head>
+<body>
+<h1>CASES <span>TR3</span></h1>
+<p class="top">Empresários reais. Resultados que você pode conferir. Página de trabalho para imagens da VSL.</p>
+<div class="nav" id="nav"></div>
+<div id="lista"></div>
+<p class="rodape">Para captura de um case em tela cheia: adicione <b>?caso=1</b> (ou 2, 3…) ao endereço.</p>
+<script>
+fetch('cases.json').then(r=>r.json()).then(cs=>{
+  const q=new URLSearchParams(location.search).get('caso');
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const lista=document.getElementById('lista'),nav=document.getElementById('nav');
+  cs.forEach(c=>{
+    nav.insertAdjacentHTML('beforeend',`<a href="?caso=${c.n}">${String(c.n).padStart(2,'0')} · ${esc(c.empresa)}</a>`);
+    lista.insertAdjacentHTML('beforeend',`<section class="case" id="c${c.n}" data-n="${c.n}">
+      <div class="img"><img src="${esc(c.img)}" alt="Print do perfil ${esc(c.arroba)} no Instagram"></div>
+      <div><div class="sel">CASE ${String(c.n).padStart(2,'0')}</div>
+      <div class="who">${esc(c.pessoa)}</div><div class="desc">${esc(c.desc)}</div>
+      <div class="tit">${esc(c.titulo)}</div><div class="sub">${esc(c.sub)}</div>
+      <div class="ad"><div><b>ANTES</b>${esc(c.antes)}</div><div class="d"><b>DEPOIS</b>${esc(c.depois)}</div></div>
+      <div class="arroba">Perfil real: ${esc(c.arroba)}</div></div></section>`);
+  });
+  if(q){document.body.classList.add('solo');[...lista.children].forEach(s=>{if(s.dataset.n!==q)s.remove()});}
+});
+</script>
+</body>
+</html>
