@@ -118,5 +118,17 @@
   "antes": "Contratos perdidos no CRM.",
   "depois": "R$ 15 milhões fechados.",
   "img": "img/case-carina.png"
+ },
+ {
+  "n": "11",
+  "empresa": "Cosmo Fibra",
+  "arroba": "",
+  "pessoa": "Carlos Lemes",
+  "desc": "Cosmo Fibra, cliente da assessoria comercial TR3",
+  "titulo": "Operação mais eficiente, menos oportunidade perdida",
+  "sub": "Com daily e alinhamento semanal, o time faz mais ligações e perde menos leads.",
+  "antes": "Oportunidades ficavam na mesa e o time trabalhava sem alinhamento.",
+  "depois": "Time alinhado, mais ligações, menos leads e inativos perdidos e vendedor com outra mentalidade.",
+  "img": ""
  }
 ]
